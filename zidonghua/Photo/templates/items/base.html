@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    <title>实验室</title>
+    <meta http-equiv="X-UA-Compatible" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/animate.min.css">
+    <link rel="stylesheet" href="/static/css/et-line-font.css">
+    <link rel="stylesheet" href="/static/css/nivo-lightbox.css">
+    <link rel="stylesheet" href="/static/css/nivo_themes/default/default.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+
+        <title>实验室成员 - {% block title %}{% endblock %}</title>
+        <style type="text/css">
+
+
+            h2 { background: #ddf; padding: 10px 20px; }
+            h3 { background: #D7E8F0; padding: 5px 20px; }
+            p { padding: 5px 20px; }
+            table { width: 100%; }
+            table th { text-align: left; }
+        </style>
+    </head>
+    <body>
+    <section class="navbar navbar-fixed-top custom-navbar1" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">重庆邮电大学车联网展示平台</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/auto" class="smoothScroll">主页</a></li>
+				<li><a href="/news" class="smoothScroll">新闻动态</a></li>
+				<li><a href="/auto/team.html" class="smoothScroll">团队简介</a></li>
+				<li><a href="/Photo/" class="smoothScroll">团队成员</a></li>
+				<li><a href="/auto/research.html" class="smoothScroll">研究动态</a></li>
+				<li><a href="/gallery" class="smoothScroll">照片展示</a></li>
+				<li><a href="/auto/contact.html" class="smoothScroll">联系方式</a></li>
+
+            </ul>
+        </div>
+    </div>
+</section>
+
+        <h1>团队成员</h1>
+    {% block content %}{% endblock %}
+    </body>
+</html>
+

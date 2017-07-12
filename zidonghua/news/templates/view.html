@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load custom_markdown %}
+{% block bodycontent %}
+
+<!--header end-->
+<div id="mainbody"
+  <div class="blogs">
+    <div id="index_view">
+      <h2 class="t_nav"><a href="/news">新闻首页</a>
+      <h1 class="c_titile">{{ news_content.news_title }}</h1>
+      <p class="box">发布时间：{{ news_content.news_timestamp }}<span>作者：{{ news_content.news_author }}</span>
+      <ul>
+          {% if news_content.news_imgurl %}
+             <img src="{{ blog_content.news_imgurl }}">
+          {% endif %}
+        <p style="word-wrap: break-word;word-break:break-all;">
+            {% if news_content.news_ismarkdown == '1' %}
+                {{ news_content.news_body | custom_markdown }}
+            {% elif news_content.news_ismarkdown == '0' %}
+                {{ news_content.news_body }}
+            {% endif %}
+        </p>
+          <p>
+              {{ news_content.news_body }}
+          </p>
+
+      </ul>
+      </div>
+  </div>
+  <!--blogs end-->
+</div>
+<!--mainbody end-->
+{% endblock bodycontent %}

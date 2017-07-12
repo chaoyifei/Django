@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block bodycontent %}
+<div id="mainbody">
+  <div class="info">
+    <figure> <img src="/static/images/zidonghua.jpg" alt="Panama Hat">
+      <figcaption><strong>汽车电子新闻</strong> 重庆邮电大学自动化学院始建于1994年，是重庆邮电大学教学科研实力最雄厚的二级学院之一。现有自动化、测控技术与仪器、电气工程与自动化、机械设计制造及其自动化，物联网工程，智能电网信息处理六个本科专业和控制理论与控制工程、检测技术与自动化装置、系统工程、机械电子工程四个硕士点，并与国内著名大学、研究院所联合培养博士研究生。</figcaption>
+    </figure>
+
+  </div>
+  <!--info end-->
+  <div class="blank"></div>
+  <div class="news">
+    <ul class="newslist">
+      {% for content in news_body %}
+      <li>
+        <div class="arrow_box">
+          <div class="ti"></div>
+          <!--三角形-->
+          <div class="ci"></div>
+          <!--圆形-->
+          <h2 class="title"><a href="{% url 'article' content.id%}">{{ content.news_title }}</a></h2>
+          <ul class="textinfo">
+            <a href="/"><img src="{{ content.news_imgurl }}"></a>
+            <p> {{ content.news_body }}</p>
+          </ul>
+          <ul class="details">
+            <li class="icon-time"><a href="#">{{ content.news_timestamp }}</a></li>
+          </ul>
+        </div>
+        <!--arrow_box end-->
+      </li>
+      {% endfor %}
+    </ul>
+    <!--newslist end-->
+    <aside>
+      <div class="tuijian">
+
+            {% for title in news_body %}
+            <li><span><strong>{{ forloop.counter }}</strong></span><a href="{% url 'article' title.id%}">{{ title.news_title }}</a></li>
+            {% endfor %}
+
+        </ol>
+      </div>
+       {% for foo in hot_rank %}
+                <li><span><a href="{% url 'article' foo.id %}">{{ foo.news_type }}</a></span><a href="{% url 'article' foo.id %}">{{ foo.news_title }}</a></li>
+            {% endfor %}
+
+        </ol>
+
+    </aside>
+  </div>
+  <!--newss end-->
+</div>
+{% endblock bodycontent %}
